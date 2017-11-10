@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+	    $(document).ready(function(){
+		    var input = $('#max');
+		var char_limit = 100;
+  input.on('keyup', function(){
+    var val = $(this).val();
+    if (val.length > parseInt(char_limit))
+     {
+      alert("character exceeds 100");
+	}
+});
+});
+</script>
+</head>
+<body>
+<textarea  id="max" >Enter text here</textarea>
+</body>
+</html>

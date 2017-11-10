@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style>
+    #warning {
+  display: none;
+}
+
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+  var input = $('#text_text');
+  var warning = $('#warning');
+  var char_limit = 30;
+  input.on('keyup', function() {
+    var val = $(this).val();
+    if (val.length > parseInt(char_limit)) {
+      alert("limit reached");
+      warning.html('hello').css('display', 'block');
+      l = val.length
+      var input = document.getElementById("text_text");
+      input.setSelectionRange(char_limit, l);
+      input.focus();
+    } else {
+      warning.css('display', 'none');
+    }
+  });
+
+});
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+<div id="test_box">
+  <textarea name="msg" cols="50" rows="5" id="text_text"></textarea>
+
+  <div id="warning"></div>
+</div>

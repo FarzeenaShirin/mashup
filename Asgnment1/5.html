@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$.fn.rowCount = function() {  
+    return $('tr', $(this).find('tbody')).length;  
+};  
+  
+$.fn.columnCount = function() {  
+    return $('th', $(this).find('tbody')).length;  
+};  
+var  rowctr = $('.table1 ').rowCount();  
+var colctr = $('.table1').columnCount();   
+alert('No of Rows:'+rowctr);  
+alert('No of Columns:'+colctr); 
+
+	});
+
+</script>
+</head>
+<body>
+<table class="table1" style="width: 100%">
+<tbody>
+	<tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>fathima</td>
+    <td>farzeena</td> 
+    <td>22</td>
+  </tr>
+   <tr>
+    <td>lekshmi</td>
+    <td>priya</td> 
+    <td>23</td>
+  </tr>
+   <tr>
+    <td>devika</td>
+    <td>mohan</td> 
+    <td>23</td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

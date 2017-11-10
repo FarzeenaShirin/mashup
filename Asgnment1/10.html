@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		body {
+  margin: 0;
+  min-width: 250px;
+}
+
+/* Include the padding and border in an element's total width and height */
+* {
+  box-sizing: border-box;
+}
+ Remove margins and padding from the list */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the list items */
+ol li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Darker background-color on hover */
+ol li:hover {
+  background: #ddd;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+/* Style the header */
+.header {
+  background-color: #f44336;
+  padding: 30px 40px;
+  color: black;
+  text-align: center;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the input */
+input {
+  border: none;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+.completed { text-decoration: underline;
+background-color: red; }
+/* Style the "Add" button */
+
+	</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+      $(document).ready(function(){
+
+    $("#button").click(function(){
+
+       var input = $("input[name='checkListItem']").val(); 
+       // $("ol").append('<li>'+input+'</li');
+       $("ol").append("<li><input class='checkbox' type='checkbox'/>"+input+" <a href='javascript:void(0);' class='remove'>&times;</a></li>");
+        $('ol').sortable();  
+
+     });
+//     el.children().first().next().click(function () {
+//     // Perform close
+
+// });
+        $(document).on("click", "a.remove" , function() {
+
+             $(this).parent().remove();   
+
+        });
+        $(document).on('change', '.checkbox', function()
+    {
+       if($(this).attr('checked'))
+        // .completed { text-decoration: line-through; }$("ol").animate({background-color:'red'});
+
+      {
+
+        $(this).removeAttr('checked');
+      }
+
+
+      {
+        $(this).attr('checked', 'checked');
+      } 
+
+      $(this).parent().toggleClass('completed');
+    });
+
+   
+      //    $(document).on('dblclick','li', function(){
+      // // $(this).fadeOut('slow');    
+      // $(this).animate({color:'red';});
+      //   // $(this).animate({color:'blue',opacity:'2'});
+      //    $('ol').sortable();  
+
+      // });
+
+// $("ol").append("<li>list item <a href='javascript:void(0);' class='remove'>&times;</a></li>"); 
+// $('#li').each(function(){
+//     $(this).append($('<span/>',{html:'X',class:'closeButton'}).click(function(){
+//         $(this).parent().remove();
+//     }));
+// });
+      
+  });
+</script>
+</head>
+
+<body>
+<div id="myDIV" class="header">
+<h2 style="margin: 5px">To Do List</h2>
+<form name="checkListForm">
+                <input type="text" name="checkListItem"/>
+            </form>
+            <button id="button">Add</button>
+            <br/>
+
+</div>
+<ol>
+            </ol>
+</script> 
+</body>
+</html>

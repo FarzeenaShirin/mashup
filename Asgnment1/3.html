@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("p").each(function(){
+			var para = $(this);
+		    para.html( para.text().replace(/(^\w+)/,'<strong>$1</strong>') ); 
+			// para.html( );
+		});
+	});
+
+</script>
+	
+</head>
+<body>
+<p>stay hungry,stay foolish</p>
+<p>need to code</p>
+<p>keep calm and learn to code</p>
+<p>success is a lousy teacher</p>
+<p>enjoy the game and chase your dreams</p>
+
+</body>
+</html>
+    <!-- $('p').each(function(){  
+        var pdata = $(this);  
+        pdata.html( pdata.text().replace(/(^\w+)/,'<strong>$1</strong>') );  
+    });   -->
